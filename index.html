@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benchmark AI Suite</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="theme-light">
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Benchmark Logo" class="brand-logo" />
+        <div>
+          <h1>Benchmark</h1>
+          <p>منصة تقييم أداء نماذج الذكاء الاصطناعي</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#dashboard">لوحة التحكم</a>
+        <a href="#tests">الاختبارات</a>
+        <a href="#models">النماذج</a>
+        <a href="#leaderboard">المتصدرون</a>
+        <a href="#reports">التقارير</a>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" id="themeToggle" aria-label="تبديل الوضع">
+          <span class="icon">🌙</span>
+        </button>
+        <button class="btn primary">تشغيل اختبار</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="hero glass" id="dashboard">
+        <div class="hero-content">
+          <h2>تحكم كامل بدورة حياة الاختبارات</h2>
+          <p>
+            قم بإدارة بطاريات الاختبار، مراقبة أداء النماذج، وتوليد تقارير دقيقة
+            في الوقت الحقيقي من خلال لوحة واحدة موحدة.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary">بدء مقارنة جديدة</button>
+            <button class="btn ghost">استيراد نتائج</button>
+          </div>
+        </div>
+        <div class="hero-preview">
+          <div class="preview-card glass">
+            <div class="preview-header">
+              <span class="badge accent">LIVE</span>
+              <span class="preview-title">حالة الاختبارات</span>
+            </div>
+            <div class="preview-grid">
+              <div>
+                <p class="preview-label">اختبارات قيد التنفيذ</p>
+                <p class="preview-value">12</p>
+              </div>
+              <div>
+                <p class="preview-label">نجاحات اليوم</p>
+                <p class="preview-value positive">94%</p>
+              </div>
+              <div>
+                <p class="preview-label">متوسط زمن التنفيذ</p>
+                <p class="preview-value">2.3 دقيقة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid grid-analytics">
+        <article class="card glass">
+          <header class="card-header">
+            <h3>نظرة عامة على الأداء</h3>
+            <button class="chip ghost">آخر 7 أيام</button>
+          </header>
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-label">دقة النموذج الأعلى</span>
+              <span class="metric-value">98.2%</span>
+              <span class="metric-trend up">+2.1%</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">معدل الخطأ</span>
+              <span class="metric-value">1.3%</span>
+              <span class="metric-trend down">-0.5%</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">زمن الاستجابة المتوسط</span>
+              <span class="metric-value">420ms</span>
+              <span class="metric-trend steady">0%</span>
+            </div>
+          </div>
+          <div class="chart-placeholder">
+            <p>مخطط الأداء المركب</p>
+          </div>
+        </article>
+
+        <article class="card glass" id="tests">
+          <header class="card-header">
+            <h3>سيناريوهات الاختبار</h3>
+            <div class="card-actions">
+              <button class="chip ghost active" data-scope="regression">
+                Regression
+              </button>
+              <button class="chip ghost" data-scope="stress">Stress</button>
+              <button class="chip ghost" data-scope="custom">Custom</button>
+            </div>
+          </header>
+          <div class="list">
+            <div class="list-row">
+              <div>
+                <p class="list-title">Smart QA Benchmark</p>
+                <p class="list-subtitle">سؤال وجواب متعدد اللغات</p>
+              </div>
+              <div class="list-meta">
+                <span class="badge primary">مجدول</span>
+                <span class="pill">14 نموذج</span>
+              </div>
+              <button class="btn icon-btn" aria-label="إدارة">
+                <span class="icon">›</span>
+              </button>
+            </div>
+            <div class="list-row">
+              <div>
+                <p class="list-title">Safety Guardrails</p>
+                <p class="list-subtitle">كشف التحيز والمحتوى الضار</p>
+              </div>
+              <div class="list-meta">
+                <span class="badge accent">جاري</span>
+                <span class="pill">9 نموذج</span>
+              </div>
+              <button class="btn icon-btn" aria-label="إدارة">
+                <span class="icon">›</span>
+              </button>
+            </div>
+            <div class="list-row">
+              <div>
+                <p class="list-title">Latency Stress</p>
+                <p class="list-subtitle">ضغط الطلبات بزمن حقيقي</p>
+              </div>
+              <div class="list-meta">
+                <span class="badge warn">تنبيه</span>
+                <span class="pill">4 نموذج</span>
+              </div>
+              <button class="btn icon-btn" aria-label="إدارة">
+                <span class="icon">›</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card glass" id="models">
+          <header class="card-header">
+            <h3>النماذج المسجلة</h3>
+            <button class="chip ghost">إضافة نموذج</button>
+          </header>
+          <div class="table">
+            <div class="table-head">
+              <span>النموذج</span>
+              <span>المطور</span>
+              <span>دقة عامة</span>
+              <span>آخر عملية</span>
+              <span>حالة</span>
+            </div>
+            <div class="table-row">
+              <span>Atlas-X</span>
+              <span>Atlas Labs</span>
+              <span class="positive">97.8%</span>
+              <span>قبل 30 دقيقة</span>
+              <span class="badge accent">أولوية</span>
+            </div>
+            <div class="table-row">
+              <span>LangBridge</span>
+              <span>Nova AI</span>
+              <span>93.5%</span>
+              <span>قبل ساعة</span>
+              <span class="badge primary">مستقر</span>
+            </div>
+            <div class="table-row">
+              <span>Sentinel</span>
+              <span>OpenGuard</span>
+              <span class="warn">88.1%</span>
+              <span>قبل 4 ساعات</span>
+              <span class="badge warn">مراجعة</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card glass highlight" id="reports">
+          <header class="card-header">
+            <h3>تحليلات متقدمة</h3>
+            <div class="card-actions">
+              <button class="chip ghost">تصدير</button>
+              <button class="chip ghost">مشاركة</button>
+            </div>
+          </header>
+          <div class="report-body">
+            <div class="report-summary">
+              <p>
+                تحليل شامل للأداء مقارنة بمجموعات بيانات متعددة تشمل الترجمة،
+                التلخيص، التتبع، والأمان.
+              </p>
+              <ul>
+                <li>دقة الترجمة: <strong>96.4%</strong></li>
+                <li>تغطية السلامة: <strong>92%</strong></li>
+                <li>رضا المستخدم: <strong>4.7/5</strong></li>
+              </ul>
+            </div>
+            <div class="report-chart">
+              <div class="radial" data-value="82">
+                <span>أداء إجمالي</span>
+                <strong>82%</strong>
+              </div>
+              <div class="legend">
+                <span><span class="dot primary"></span>ذكاء لغوي</span>
+                <span><span class="dot accent"></span>سلامة</span>
+                <span><span class="dot highlight"></span>زمن استجابة</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid grid-operations">
+        <article class="card glass" id="leaderboard">
+          <header class="card-header">
+            <h3>لوحة المتصدرين</h3>
+            <div class="card-actions">
+              <button class="chip ghost active" data-season="q1">
+                الربع الأول
+              </button>
+              <button class="chip ghost" data-season="q2">الربع الثاني</button>
+              <button class="chip ghost" data-season="live">مباشر</button>
+            </div>
+          </header>
+          <ol class="leaderboard">
+            <li>
+              <span class="rank">1</span>
+              <div class="leader-info">
+                <p class="leader-name">Atlas-X</p>
+                <p class="leader-meta">دقة 98.2% | زمن 380ms</p>
+              </div>
+              <span class="score positive">9,210</span>
+            </li>
+            <li>
+              <span class="rank">2</span>
+              <div class="leader-info">
+                <p class="leader-name">NovaMind</p>
+                <p class="leader-meta">دقة 96.7% | زمن 420ms</p>
+              </div>
+              <span class="score">8,860</span>
+            </li>
+            <li>
+              <span class="rank">3</span>
+              <div class="leader-info">
+                <p class="leader-name">Sentinel</p>
+                <p class="leader-meta">دقة 94.1% | زمن 450ms</p>
+              </div>
+              <span class="score warn">8,020</span>
+            </li>
+            <li>
+              <span class="rank">4</span>
+              <div class="leader-info">
+                <p class="leader-name">Aurora</p>
+                <p class="leader-meta">دقة 92.8% | زمن 470ms</p>
+              </div>
+              <span class="score">7,910</span>
+            </li>
+          </ol>
+        </article>
+
+        <article class="card glass">
+          <header class="card-header">
+            <h3>مخطط المقارنة</h3>
+            <div class="card-actions">
+              <button class="chip ghost active" data-chart="accuracy">
+                الدقة
+              </button>
+              <button class="chip ghost" data-chart="latency">
+                زمن الاستجابة
+              </button>
+              <button class="chip ghost" data-chart="cost">التكلفة</button>
+            </div>
+          </header>
+          <div class="comparison-grid">
+            <div class="comparison-bar">
+              <span class="label">Atlas-X</span>
+              <div class="bar"><span style="width: 92%"></span></div>
+              <span class="value">92%</span>
+            </div>
+            <div class="comparison-bar">
+              <span class="label">NovaMind</span>
+              <div class="bar"><span style="width: 87%"></span></div>
+              <span class="value">87%</span>
+            </div>
+            <div class="comparison-bar">
+              <span class="label">Sentinel</span>
+              <div class="bar"><span style="width: 81%"></span></div>
+              <span class="value">81%</span>
+            </div>
+            <div class="comparison-bar">
+              <span class="label">Aurora</span>
+              <div class="bar"><span style="width: 75%"></span></div>
+              <span class="value">75%</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card glass">
+          <header class="card-header">
+            <h3>التدقيق الزمني</h3>
+            <button class="chip ghost">عرض الكل</button>
+          </header>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="dot accent"></span>
+              <div>
+                <p class="timeline-title">Atlas-X تجاوز عتبة الدقة 98%</p>
+                <time datetime="2024-05-20T09:00">09:00 - اليوم</time>
+              </div>
+              <span class="timeline-badge positive">ترقية</span>
+            </div>
+            <div class="timeline-item">
+              <span class="dot primary"></span>
+              <div>
+                <p class="timeline-title">
+                  تشغيل مجموعة Safety Guardrails بنجاح
+                </p>
+                <time datetime="2024-05-20T07:30">07:30 - اليوم</time>
+              </div>
+              <span class="timeline-badge">مكتمل</span>
+            </div>
+            <div class="timeline-item">
+              <span class="dot highlight"></span>
+              <div>
+                <p class="timeline-title">تنبيه: زمن الاستجابة لـ Sentinel</p>
+                <time datetime="2024-05-19T22:10">22:10 - أمس</time>
+              </div>
+              <span class="timeline-badge warn">مراجعة</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer glass">
+      <div class="footer-meta">
+        <img src="assets/logo.svg" alt="Benchmark" class="brand-logo" />
+        <p>© 2024 Benchmark Labs. جميع الحقوق محفوظة.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">الشروط</a>
+        <a href="#">الأسئلة الشائعة</a>
+      </div>
+      <div class="footer-contact">
+        <p>دعم فني: support@benchmark.ai</p>
+        <button class="btn ghost">مركز التوثيق</button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
